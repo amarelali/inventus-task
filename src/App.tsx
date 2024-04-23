@@ -24,7 +24,7 @@ function App() {
   };
   return (
     <>
-      <ul className="bg-white h-screen font-semibold font-sans w-1/4 relative">
+      <ul className="bg-white h-screen font-semibold font-sans w-1/2 md:w-1/4 relative">
         <MenuItems
           icon={<Date />}
           title="Date"
