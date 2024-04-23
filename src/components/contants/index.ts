@@ -1,0 +1,1 @@
+export const svgStyle ="flex-shrink-0 text-[#aaaaaa] transition duration-75 dark:text-gray-400 group-hover:text-[#0fb354] dark:group-hover:text-white";
