@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import MenuItems from "./MenuItems";
+import SubMenuItems from "./SubMenuItems";
 
 interface IProps {
   data: { title: string; icon: ReactNode; color: string }[];
@@ -11,15 +11,13 @@ const DetailsMenu = ({ data, title }: IProps) => {
       <span>{title}</span>
       <ul className="text-black">
         {data.map(({ icon, title, color }, idx) => (
-          <MenuItems
+          <SubMenuItems
             key={idx}
             icon={icon}
             title={title}
             className="p-2 cursor-pointer"
-            showArrow={false}
             color={color}
             onClick={()=>console.log({icon,color,title})}
-            isSubMenu={true}
           />
         ))}
       </ul>
