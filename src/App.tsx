@@ -27,7 +27,7 @@ function App() {
       <ul className="bg-white h-screen font-semibold font-sans w-1/2 md:w-1/4 relative">
         <MenuItems
           icon={<Date />}
-          title="Date"
+          title="Sat, January 20"
           iconTitle="Date"
           className="p-3"
           isOpen={isOpenIndex === 0}
@@ -35,7 +35,7 @@ function App() {
         ></MenuItems>
         <MenuItems
           icon={<Time />}
-          title="Hello"
+          title="03:15 PM"
           iconTitle="Time"
           className="p-3"
           isOpen={isOpenIndex === 1}
@@ -43,7 +43,7 @@ function App() {
         ></MenuItems>
         <MenuItems
           icon={<Covers />}
-          title="Hello"
+          title="8"
           iconTitle="Covers"
           className="p-3"
           isOpen={isOpenIndex === 2}
@@ -51,7 +51,7 @@ function App() {
         ></MenuItems>
         <MenuItems
           icon={<Duration />}
-          title="Hello"
+          title="3h"
           iconTitle="Duration"
           className="p-3"
           isOpen={isOpenIndex === 3}
@@ -59,7 +59,7 @@ function App() {
         ></MenuItems>
         <MenuItems
           icon={<Table />}
-          title="Hello"
+          title="3"
           iconTitle="Table"
           className="p-3"
           isOpen={isOpenIndex === 4}
@@ -67,7 +67,7 @@ function App() {
         ></MenuItems>
         <MenuItems
           icon={<Status />}
-          title="Hello"
+          title="Not Confirmed"
           iconTitle="Status"
           className="p-3 cursor-pointer"
           isOpen={isOpenIndex === 6}

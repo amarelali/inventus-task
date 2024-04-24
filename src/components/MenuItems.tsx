@@ -1,16 +1,19 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Arrow from "./SVG/Arrow";
+import NotConfirmed from "./SVG/NotConfirmed";
 
 interface IProps {
   icon: ReactNode;
   iconTitle?: string;
-  title?: string;
+  title?: ReactNode;
   children?: ReactNode;
   showArrow?: boolean;
   className?: string;
   color?: string;
-  onOpen?:()=>void;
-  isOpen?:boolean
+  onOpen?: () => void;
+  isOpen?: boolean;
+  onClick?: () => void;
+  isSubMenu?:boolean
 }
 const MenuItems = ({
   icon,
@@ -21,11 +24,38 @@ const MenuItems = ({
   showArrow = true,
   color,
   onOpen,
-  isOpen
+  isOpen,
+  isSubMenu =false
 }: IProps) => {
+  const [titleValue, setTitleValue] = useState<ReactNode>(
+    <div className="flex justify-center gap-1">
+      {(iconTitle==='Status') && (<div
+        className={`p-1 flex justify-center items-center rounded-full`}
+        style={{ backgroundColor: `#4a4e52` }}
+      >
+        <NotConfirmed />
+      </div>)}
+      {title}
+    </div>
+  );
+  const onCheckStatusDetails = ({icon,color,title}:{icon:ReactNode;color?:string;title:ReactNode})=>{
+    if(!isSubMenu) return;
+    console.log({icon,color,title});
+    setTitleValue(
+      <div className="flex justify-center gap-1">
+      {(iconTitle==='Status') && (<div
+        className={`p-1 flex justify-center items-center rounded-full`}
+        style={{ backgroundColor: `${color}` }}
+      >
+        {icon}
+      </div>)}
+      {title}
+    </div>
+    );
+  }
   return (
     <>
-      <li>
+      <li onClick={()=>onCheckStatusDetails({icon,color,title})}>
         <span
           onClick={onOpen}
           className={`flex items-center text-gray-900 dark:text-white hover:bg-[#dbf3e3] ${
@@ -46,7 +76,7 @@ const MenuItems = ({
             </div>
           )}
           <span className="flex flex-3 justify-between items-center ms-3 whitespace-nowrap w-full">
-            <span>{title}</span> {showArrow && <Arrow />}
+            {titleValue} {showArrow && <Arrow />}
           </span>
         </span>
       </li>

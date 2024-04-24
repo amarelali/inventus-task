@@ -18,6 +18,8 @@ const DetailsMenu = ({ data, title }: IProps) => {
             className="p-2 cursor-pointer"
             showArrow={false}
             color={color}
+            onClick={()=>console.log({icon,color,title})}
+            isSubMenu={true}
           />
         ))}
       </ul>
