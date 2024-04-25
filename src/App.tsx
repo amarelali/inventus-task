@@ -17,6 +17,7 @@ import Divider from "./components/ui/Divider";
 import Comments from "./components/SVG/Comments";
 import Tags from "./components/SVG/Tags";
 import Notes from "./components/SVG/Notes";
+import Draggable from 'react-draggable';
 
 function App() {
   const [covers, setEditedCovers] = useState<number>(0);
@@ -63,14 +64,15 @@ function App() {
     }
     return `${hour}:${minutes} ${term}`;
   };
-  /**
-   *    border-color: #e5e5e5;
-    border-width: 1px;
-    border-style: solid
-   */
   return (
     <>
-      <ul className="bg-white h-full font-semibold font-sans w-[57%] md:w-1/4 relative border-[#e5e5e5] border-[1px] border-solid">
+      <Draggable
+        axis="both"
+        handle=".handle"
+        defaultPosition={{x: 0, y: 0}}
+        grid={[25, 25]}
+        scale={1}>
+      <ul className="handle bg-white h-full font-semibold font-sans w-[57%] md:w-1/4 relative border-[#e5e5e5] border-[1px] border-solid cursor-move">
         <MenuItems
           icon={<Date />}
           title="Sat, January 20"
@@ -239,12 +241,13 @@ function App() {
             {"Notes..."}
           </span>
         </MenuItems>
-       <li className="flex justify-center items-center">
-       <Button className="w-[90%] p-2 text-uppercase rounded-md bg-[#018B40] hover:bg-green-600 active:bg-green-800 text-white my-4">
-          Create Reservation
-        </Button>
-       </li>
+        <li className="flex justify-center items-center">
+          <Button className="w-[90%] p-2 text-uppercase rounded-md bg-[#018B40] hover:bg-green-600 active:bg-green-800 text-white my-4">
+            Create Reservation
+          </Button>
+        </li>
       </ul>
+      </Draggable>
     </>
   );
 }
