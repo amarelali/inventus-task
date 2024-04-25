@@ -84,7 +84,7 @@ function App() {
         grid={[25, 25]}
         scale={1}
       >
-        <ul className="handle bg-white h-full font-semibold font-sans w-[57%] md:w-1/4 relative border-[#e5e5e5] border-[1px] border-solid cursor-move">
+        <ul className="handle bg-white h-full font-semibold font-sans w-[66%] md:w-1/4 relative border-[#e5e5e5] border-[1px] border-solid cursor-move">
           <MenuItems
             icon={<DateSvg />}
             title={
