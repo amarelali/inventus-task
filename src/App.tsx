@@ -14,6 +14,9 @@ import { dataDetailsMenu } from "./components/contants";
 import { controleButtonStyle } from "./components/contants/styles";
 import Toggle from "./components/ui/Toggle";
 import Divider from "./components/ui/Divider";
+import Comments from "./components/SVG/Comments";
+import Tags from "./components/SVG/Tags";
+import Notes from "./components/SVG/Notes";
 
 function App() {
   const [covers, setEditedCovers] = useState<number>(0);
@@ -75,10 +78,10 @@ function App() {
           <span
             className={`p-3 flex items-center text-gray-900 dark:text-white hover:bg-[#dbf3e3] hover:text-black dark:hover:bg-gray-700 group`}
           >
-            <span className="text-[13px] flex items-center gap-1 text-[#aaaaaa]">
+            <span className="text-[13px] flex items-center gap-1 text-[#aaaaaa] w-40">
               <Time /> {"Time"}
             </span>
-            <span className="flex flex-3 justify-between items-center ms-3 whitespace-nowrap w-full">
+            <span className="flex flex-3 justify-between items-center whitespace-nowrap w-full">
               {finalTime}
               <span className="flex gap-3">
                 <Button
@@ -101,10 +104,10 @@ function App() {
           <span
             className={`p-3 flex items-center text-gray-900 dark:text-white hover:bg-[#dbf3e3] hover:text-black dark:hover:bg-gray-700 group`}
           >
-            <span className="text-[13px] flex items-center gap-1 text-[#aaaaaa]">
+            <span className="text-[13px] flex items-center gap-1 text-[#aaaaaa] w-40">
               <Covers /> {"Covers"}
             </span>
-            <span className="flex flex-3 justify-between items-center ms-3 whitespace-nowrap w-full">
+            <span className="flex flex-3 justify-between items-center whitespace-nowrap w-full">
               {covers}
               <span className="flex gap-3">
                 <Button
@@ -131,10 +134,10 @@ function App() {
           <span
             className={`p-3 flex items-center text-gray-900 dark:text-white hover:bg-[#dbf3e3] hover:text-black dark:hover:bg-gray-700 group`}
           >
-            <span className="text-[13px] flex items-center gap-1 text-[#aaaaaa]">
+            <span className="text-[13px] flex items-center gap-1 text-[#aaaaaa] w-40">
               <Duration /> {"Duration"}
             </span>
-            <span className="flex flex-3 justify-between items-center ms-3 whitespace-nowrap w-full">
+            <span className="flex flex-3 justify-between items-center whitespace-nowrap w-full">
               {`${duration}h`}
               <span className="flex gap-3">
                 <Button
@@ -196,6 +199,31 @@ function App() {
           </span>
         </li>
         <Divider />
+        <MenuItems
+          icon={<Comments />}
+          title="Add private comments"
+          iconTitle="Comment"
+          className="p-3 cursor-pointer notes"
+          isOpen={false}
+          onOpen={() => {}}
+        />
+        <MenuItems
+          icon={<Tags />}
+          title="Add resevation tags"
+          iconTitle="Tags"
+          className="p-3 cursor-pointer notes"
+          isOpen={false}
+          onOpen={() => {}}
+        />
+        <Divider />
+        <MenuItems
+          icon={<Notes />}
+          title="Add notes to send to guest"
+          iconTitle="notes"
+          className="p-3 cursor-pointer notes"
+          isOpen={false}
+          onOpen={() => {}}
+        />
       </ul>
     </>
   );

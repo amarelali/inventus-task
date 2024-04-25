@@ -63,7 +63,7 @@ const MenuItems = ({
           } hover:text-black dark:hover:bg-gray-700 group ${className}`}
         >
           {iconTitle && (
-            <span className="text-[13px] flex items-center gap-1 text-[#aaaaaa]">
+            <span className="text-[13px] flex items-center gap-1 text-[#aaaaaa] w-40">
               {icon} {iconTitle}
             </span>
           )}
@@ -75,7 +75,7 @@ const MenuItems = ({
               {icon}
             </div>
           )}
-          <span className="flex flex-3 justify-between items-center ms-3 whitespace-nowrap w-full">
+          <span className="flex flex-3 justify-between items-center whitespace-nowrap w-full">
             {title} {showArrow && <Arrow />}
           </span>
         </span>
