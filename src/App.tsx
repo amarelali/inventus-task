@@ -21,7 +21,6 @@ import SubMenuItems from "./components/SubMenuItems";
 import Late from "./components/SVG/Late";
 import Arrow from "./components/SVG/Arrow";
 import DatePickerComponent from "./components/DatePicker";
-import { getDayName, getMonthName } from "./components/functionality";
 
 function App() {
   const [date, setDate] = useState<string>(`Sat, January 20`);
