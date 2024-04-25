@@ -67,7 +67,7 @@ const MenuItems = ({
               {icon} {iconTitle}
             </span>
           )}
-          {color && (
+          {/* {color && (
             <div
               className={`p-1 flex justify-center items-center rounded-full`}
               style={{ backgroundColor: `${color}` }}
@@ -77,7 +77,8 @@ const MenuItems = ({
           )}
           <span className="flex flex-3 justify-between items-center whitespace-nowrap w-full">
             {title} {showArrow && <Arrow />}
-          </span>
+          </span> */}
+          {title}
         </span>
       </li>
       {isOpen && children && (
