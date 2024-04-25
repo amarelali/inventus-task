@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Arrow from "./SVG/Arrow";
 
 interface IProps {
   icon: ReactNode;
@@ -19,12 +18,10 @@ const MenuItems = ({
   iconTitle,
   className,
   children,
-  color,
   onOpen,
   isOpen,
   // isSubMenu =false,
   title,
-  showArrow=true
 }: IProps) => {
   // const [titleValue, setTitleValue] = useState<ReactNode>(
   //   <div className="flex justify-center gap-1">

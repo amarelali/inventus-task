@@ -1,5 +1,4 @@
-import { ReactNode, useState } from "react";
-import NotConfirmed from "./SVG/NotConfirmed";
+import { ReactNode } from "react";
 
 interface IProps {
   icon: ReactNode;
