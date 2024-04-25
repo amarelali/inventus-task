@@ -1,6 +1,6 @@
 import { svgStyle } from "../contants";
 
-const Date= () => {
+const DateSvg= () => {
   return (
     <svg
       fill="currentColor"
@@ -14,4 +14,4 @@ const Date= () => {
     </svg>
   );
 };
-export default Date;
+export default DateSvg;

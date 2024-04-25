@@ -5,7 +5,7 @@ import Time from "./components/SVG/Time";
 import Covers from "./components/SVG/Covers";
 import Duration from "./components/SVG/Duration";
 import Status from "./components/SVG/Status";
-import Date from "./components/SVG/Date";
+import DateSvg from "./components/SVG/Date";
 import Close from "./components/SVG/Close";
 import { ReactNode, useEffect, useState } from "react";
 import Button from "./components/ui/Button";
@@ -21,9 +21,10 @@ import SubMenuItems from "./components/SubMenuItems";
 import Late from "./components/SVG/Late";
 import Arrow from "./components/SVG/Arrow";
 import DatePickerComponent from "./components/DatePicker";
+import { formatDate } from "./components/functionality";
 
 function App() {
-  const [date, setDate] = useState<string>(`Sat, January 20`);
+  const [date, setDate] = useState<string>(formatDate(new Date()));
   const [covers, setEditedCovers] = useState<number>(0);
   const [duration, setDuration] = useState<number>(1);
   const [hour, setHour] = useState<number>(12);
@@ -85,7 +86,7 @@ function App() {
       >
         <ul className="handle bg-white h-full font-semibold font-sans w-[57%] md:w-1/4 relative border-[#e5e5e5] border-[1px] border-solid cursor-move">
           <MenuItems
-            icon={<Date />}
+            icon={<DateSvg />}
             title={
               <>
                 <span className="flex flex-3 justify-between items-center whitespace-nowrap w-full">
