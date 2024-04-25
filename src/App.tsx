@@ -20,8 +20,11 @@ import Draggable from "react-draggable";
 import SubMenuItems from "./components/SubMenuItems";
 import Late from "./components/SVG/Late";
 import Arrow from "./components/SVG/Arrow";
+import DatePickerComponent from "./components/DatePicker";
+import { getDayName, getMonthName } from "./components/functionality";
 
 function App() {
+  const [date, setDate] = useState<string>(`Sat, January 20`);
   const [covers, setEditedCovers] = useState<number>(0);
   const [duration, setDuration] = useState<number>(1);
   const [hour, setHour] = useState<number>(12);
@@ -71,6 +74,7 @@ function App() {
     }
     return `${hour}:${minutes} ${term}`;
   };
+ 
   return (
     <>
       <Draggable
@@ -86,7 +90,7 @@ function App() {
             title={
               <>
                 <span className="flex flex-3 justify-between items-center whitespace-nowrap w-full">
-                  <span className="flex gap-2">{"Sat, January 20"}</span>
+                  <span className="flex gap-2">{date}</span>
                   <Arrow />
                 </span>
               </>
@@ -95,7 +99,20 @@ function App() {
             className="p-3"
             isOpen={isOpenIndex === 0}
             onOpen={() => handleOpen(0)}
-          ></MenuItems>
+          >
+            <>
+              <span
+                className="flex justify-end p-2 h-[5%] cursor-pointer"
+                onClick={() => handleOpen(0)}
+              >
+                <Close />
+              </span>
+              <span className="flex flex-col gap-3 overflow-auto h-[95%] details p-2">
+                <span>Set new Date:</span>
+                <DatePickerComponent setFunction={setDate}/> 
+              </span>
+            </>
+          </MenuItems>
           <li>
             <span
               className={`p-3 flex items-center text-gray-900 dark:text-white hover:bg-[#dbf3e3] hover:text-black dark:hover:bg-gray-700 group`}
