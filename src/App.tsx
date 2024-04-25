@@ -13,6 +13,7 @@ import Button from "./components/ui/Button";
 import { dataDetailsMenu } from "./components/contants";
 import { controleButtonStyle } from "./components/contants/styles";
 import Toggle from "./components/ui/Toggle";
+import Divider from "./components/ui/Divider";
 
 function App() {
   const [covers, setEditedCovers] = useState<number>(0);
@@ -194,6 +195,7 @@ function App() {
             </span>
           </span>
         </li>
+        <Divider />
       </ul>
     </>
   );
