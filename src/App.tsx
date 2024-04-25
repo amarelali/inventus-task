@@ -63,9 +63,14 @@ function App() {
     }
     return `${hour}:${minutes} ${term}`;
   };
+  /**
+   *    border-color: #e5e5e5;
+    border-width: 1px;
+    border-style: solid
+   */
   return (
     <>
-      <ul className="bg-white h-screen font-semibold font-sans w-[57%] md:w-1/4 relative">
+      <ul className="bg-white h-full font-semibold font-sans w-[57%] md:w-1/4 relative border-[#e5e5e5] border-[1px] border-solid">
         <MenuItems
           icon={<Date />}
           title="Sat, January 20"
@@ -165,20 +170,20 @@ function App() {
           title="3"
           iconTitle="Table"
           className="p-3"
-          isOpen={isOpenIndex === 4}
-          onOpen={() => handleOpen(4)}
+          isOpen={isOpenIndex === 1}
+          onOpen={() => handleOpen(1)}
         ></MenuItems>
         <MenuItems
           icon={<Status />}
           title="Not Confirmed"
           iconTitle="Status"
           className="p-3 cursor-pointer"
-          isOpen={isOpenIndex === 6}
-          onOpen={() => handleOpen(6)}
+          isOpen={isOpenIndex === 2}
+          onOpen={() => handleOpen(2)}
         >
           <span
             className="flex justify-end p-2 h-[5%] cursor-pointer"
-            onClick={() => handleOpen(6)}
+            onClick={() => handleOpen(2)}
           >
             <Close />
           </span>
@@ -204,16 +209,16 @@ function App() {
           title="Add private comments"
           iconTitle="Comment"
           className="p-3 cursor-pointer notes"
-          isOpen={false}
-          onOpen={() => {}}
+          isOpen={isOpenIndex === 3}
+          onOpen={() => handleOpen(3)}
         />
         <MenuItems
           icon={<Tags />}
           title="Add resevation tags"
           iconTitle="Tags"
           className="p-3 cursor-pointer notes"
-          isOpen={false}
-          onOpen={() => {}}
+          isOpen={isOpenIndex === 4}
+          onOpen={() => handleOpen(4)}
         />
         <Divider />
         <MenuItems
@@ -221,9 +226,24 @@ function App() {
           title="Add notes to send to guest"
           iconTitle="notes"
           className="p-3 cursor-pointer notes"
-          isOpen={false}
-          onOpen={() => {}}
-        />
+          isOpen={isOpenIndex === 5}
+          onOpen={() => handleOpen(5)}
+        >
+          <span
+            className="flex justify-end p-2 h-[5%] cursor-pointer"
+            onClick={() => handleOpen(5)}
+          >
+            <Close />
+          </span>
+          <span className="flex flex-col gap-3 overflow-auto h-[95%] details p-2">
+            {"Notes..."}
+          </span>
+        </MenuItems>
+       <li className="flex justify-center items-center">
+       <Button className="w-[90%] p-2 text-uppercase rounded-md bg-[#018B40] hover:bg-green-600 active:bg-green-800 text-white my-4">
+          Create Reservation
+        </Button>
+       </li>
       </ul>
     </>
   );

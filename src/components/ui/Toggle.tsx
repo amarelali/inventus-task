@@ -9,7 +9,7 @@ const Toggle =()=> {
       checked={enabled}
       onChange={setEnabled}
       className={`${
-        enabled ? 'bg-[#26b464]' : 'bg-gray-400'
+        enabled ? 'bg-[#018B40]' : 'bg-gray-400'
       } relative inline-flex h-6 w-11 items-center rounded-full`}
     >
       <span className="sr-only">Enable notifications</span>
