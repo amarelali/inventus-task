@@ -6,7 +6,6 @@ interface IProps{
 }
 const DatePickerComponent = ({setFunction}:IProps) => {
   const [startDate, setStartDate] = useState<Date>(new Date());
-//   const [date, setDate] = useState<string>(`Sat, January 20`);
   function getDayName(dayNumber: number) {
     const date = new Date(dayNumber);
     const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
