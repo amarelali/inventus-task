@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { formatDate } from "./functionality";
+import { formatDate } from "../functionality";
 interface IProps {
   setFunction: (date: string) => void;
 }

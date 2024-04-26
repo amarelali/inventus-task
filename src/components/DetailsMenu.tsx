@@ -1,6 +1,6 @@
 import SubMenuItems from "./SubMenuItems";
 import Close from "./SVG/Close";
-import { dataDetailsMenu } from "./contants";
+import { dataDetailsMenu } from "../contants";
 
 interface IProps {
   onClick: () => void;

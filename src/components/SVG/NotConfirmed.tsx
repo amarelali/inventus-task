@@ -1,4 +1,4 @@
-import { svgStyle } from "../contants";
+import { svgStyle } from "../../contants";
 
 interface IProps {
 }

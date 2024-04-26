@@ -9,8 +9,8 @@ import DateSvg from "./components/SVG/Date";
 import Close from "./components/SVG/Close";
 import { ReactNode, useEffect, useState } from "react";
 import Button from "./components/ui/Button";
-import { dataDetailsMenu } from "./components/contants";
-import { controleButtonStyle } from "./components/contants/styles";
+import { dataDetailsMenu } from "./contants";
+import { controleButtonStyle } from "./contants/styles";
 import Toggle from "./components/ui/Toggle";
 import Divider from "./components/ui/Divider";
 import Comments from "./components/SVG/Comments";
@@ -21,7 +21,7 @@ import SubMenuItems from "./components/SubMenuItems";
 import Late from "./components/SVG/Late";
 import Arrow from "./components/SVG/Arrow";
 import DatePickerComponent from "./components/DatePicker";
-import { formatDate } from "./components/functionality";
+import { formatDate } from "./functionality";
 
 function App() {
   const [date, setDate] = useState<string>(formatDate(new Date()));
