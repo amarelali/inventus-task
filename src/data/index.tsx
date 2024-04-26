@@ -7,7 +7,7 @@ import NotConfirmed from "../components/SVG/NotConfirmed";
 import Status from "../components/SVG/Status";
 import Time from "../components/SVG/Time";
 import PartiallyArrived from "../components/SVG/partiallyArrived";
-import { IDetails } from "../interfaces";
+import { IDetails, ITables } from "../interfaces";
 
 export const upcoming: IDetails[] = [
   {
@@ -67,3 +67,4 @@ export const inService: IDetails[] = [
     title: "Main Course",
   },
 ];
+export const tableData: ITables[] = [{ color: "#e07488", bgcolor: "#fadde2" },{ color: "#c8ded2", bgcolor: "#e9f2ef" },{ color: "rgb(202 228 239 / 50%)", bgcolor: "white" }];
